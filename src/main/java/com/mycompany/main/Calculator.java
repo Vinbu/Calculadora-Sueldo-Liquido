@@ -12,7 +12,6 @@ class Calculator{
     public final void Init(int salary){
         this.salary = salary;
         this.afp = (float) (0.1*salary);
-        this.health = (float) (0.07*salary);
         this.cesantia = (float) (0.03*salary);
         this.finalsalary = this.salary-(this.afp + this.cesantia + this.health);
     }
@@ -24,7 +23,4 @@ class Calculator{
     }
     public int CesantiaPercent(){
         return (int) this.cesantia;
-    }
-    public int HealthPercent(){
-        return (int) this.health;
 }}  
