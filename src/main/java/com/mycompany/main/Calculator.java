@@ -5,22 +5,18 @@ class Calculator{
     private float cesantia;
     private float health;
     private float finalsalary;
-   
-    public Calculator(int salary){
-        Init(salary);
-    }
-    public final void Init(int salary){
+
+    public Calculator(int salary,int health,int afp){
         this.salary = salary;
-        this.afp = (float) (0.1*salary);
+        this.health = health;
+        this.afp = afp;
         this.cesantia = (float) (0.03*salary);
         this.finalsalary = this.salary-(this.afp + this.cesantia + this.health);
     }
     public int getSalaryAfterDiscounts(){
         return (int) this.finalsalary;
     }
-    public int AfpPercent(){
-        return (int) this.afp;
-    }
     public int CesantiaPercent(){
         return (int) this.cesantia;
-}}  
+    }
+}
