@@ -13,14 +13,32 @@ class AFP_Percent {
     private float AFP_Uno = 0.10069F;
     private int AFP_Client;
 
-    public AFP_Percent(int salary, String AFP) {
-        float AFP_Cap = this.AFP_Cap * salary;
-        float AFP_Cup = this.AFP_Cup * salary;
-        float AFP_Hab = this.AFP_Hab * salary;
-        float AFP_Mod = this.AFP_Mod * salary;
-        float AFP_PlV = this.AFP_PlV * salary;
-        float AFP_Pro = this.AFP_Pro * salary;
-        float AFP_Uno = this.AFP_Uno * salary;
+    /**Obtiene el valor de la AFP
+     * La siguiente clase se encarga de obtener el monto de descuento de la AFP
+     * del usuario de acuerdo a lo ingresado y a las AfP existentes en Chile.
+     * 
+     * Nota 1: Inicialmente se almacenan cada uno de los posibles resultados
+     * de acuerdo a lo ingresado por el usuario.
+     * 
+     * Nota 2: Se crea una lista con cada una de las AFP existentes para
+     * compararla con la respuesta del usuario, ya que se presupone que pueda
+     * ingresar algo no deseado.
+     * 
+     * Nota 3: Cuando la respuesta de usuario coincide con alguna AFP de la
+     * lista se procede a guardar el valor correspondiente a esa AFP,
+     * extrayéndolo de una de las posibles respuestas anteriormente 
+     * almacenadas.
+     * @param salary1 Salario Base Y Gratificación
+     * @param AFP Respuesta del usuario en formato String
+     */
+    public AFP_Percent(int salary1, String AFP) {
+        float AFP_Cap = this.AFP_Cap * salary1;
+        float AFP_Cup = this.AFP_Cup * salary1;
+        float AFP_Hab = this.AFP_Hab * salary1;
+        float AFP_Mod = this.AFP_Mod * salary1;
+        float AFP_PlV = this.AFP_PlV * salary1;
+        float AFP_Pro = this.AFP_Pro * salary1;
+        float AFP_Uno = this.AFP_Uno * salary1;
 
         String afps[] = {"Capital", "Cuprum", "Habitat", "Modelo", "Planvital", "Provida", "Uno"};
 
@@ -61,6 +79,10 @@ class AFP_Percent {
         }
     }
 
+    /**
+     * Metodo que retorna el monto de descuento de la AFP seleccionada
+     * @return Retornar monto AFP
+     */
     public int getAFP_Client() {
         return AFP_Client;
     }
