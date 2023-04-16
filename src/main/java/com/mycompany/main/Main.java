@@ -22,14 +22,18 @@ public class Main {
         Scanner teclado = new Scanner(System.in);
 
         System.out.print("Indique su Sueldo Base: ");
-        int salary = teclado.nextInt();
+        float salary = teclado.nextFloat();
+        while(salary<=0){
+            System.out.println("El monto ingresado no es válido, ingrese otro valor: ");
+            salary = teclado.nextFloat();
+        }
 
         System.out.println("¿Posee Gratificación? (Si / No)");
         String gratify = teclado.next();
         Gratify gratify1 = new Gratify(gratify);
-        int gratify_percent = gratify1.getGratify();
+        int gratify_percent = (int) gratify1.getGratify();
         
-        int salary1 = gratify_percent + salary;
+        float salary1 = gratify_percent + salary;
 
         Scanner teclado2 = new Scanner(System.in);
         System.out.println("¿Posee Fonasa o Isapre?: ");
@@ -51,7 +55,7 @@ public class Main {
         int cesantia = calculator.CesantiaPercent();
         System.out.println("Su sueldo líquido es: " + salaryAfterDiscount);
         System.out.println("El descuento de AFP es: " + afp_client);
-        System.out.println("El descuento de seguro de Cesantía es: " + cesantia);
-        System.out.println("El descuento de seguro de seguro de Salud es: " + Health);
+        System.out.println("El descuento de Seguro de Cesantía es: " + cesantia);
+        System.out.println("El descuento de su Seguro de Salud es: " + Health);
     }
 }

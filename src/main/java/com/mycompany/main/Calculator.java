@@ -1,10 +1,9 @@
 package com.mycompany.main;
 class Calculator{
-    private int salary;
+    private float salary;
     private float afp;
     private float cesantia;
     private float health;
-    private int gratify;
     private float finalsalary;
 
     /**Define los parámetros de la clase actual y realiza los cálculos
@@ -12,7 +11,8 @@ class Calculator{
      * realizar los debidos cálculos para obtener el Sueldo Líquido.
      * 
      * Nota 1: El seguro de cesantía es un porcentaje fijo para cualquier 
-     * persona, por lo tanto se calcula como el 3% del Sueldo Base.
+     * persona, por lo tanto se calcula como el 3% del Sueldo Base con 
+     * Gratificación.
      * 
      * Nota 2: La gratificación es una bonifición que se suma al Sueldo Bruto ya
      * que es una bonificación, mientras que los descuentos como el de AFP, 
@@ -24,8 +24,7 @@ class Calculator{
      * @param afp Valor del descuento por AFP
      * @param gratify Valor de la Gratificación ingresada por el usuario.
      */
-    public Calculator(int salary1,int health,int afp){
-        this.gratify = gratify;
+    public Calculator(float salary1,int health,int afp){
         this.salary = salary1;
         this.health = health;
         this.afp = afp;

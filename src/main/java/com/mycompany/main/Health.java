@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 class Health {
     private String previsional;
-    private int salary;
+    private float salary;
     private int Health;
 
     /**Obtiene el valor del Seguro de Salud
@@ -24,10 +24,13 @@ class Health {
      * cálculo de acuerdo a una constante que corresponde al valor aproximado
      * de la UF.
      * 
+     * Nota 4: Se presupone que el usuario podría ingresar valores negativos o 0
+     * en los UF, por lo que se le limita a solo valores positivos.
+     * 
      * @param previsional Respuesta del usuario a si posee "Fonasa" o "Isapre"
      * @param salary1 Sueldo Base y Gratificación
      */
-    public Health(String previsional, int salary1) {
+    public Health(String previsional, float salary1) {
         this.previsional = previsional;
         this.salary = salary1;
 
@@ -45,6 +48,11 @@ class Health {
             Scanner teclado = new Scanner(System.in);
             System.out.println("Indique su cotización en UF: ");
             float UF = teclado.nextFloat();
+            while(UF<=0){
+                System.out.println("El valor ingresado no es válido, ingrese otro monto: ");
+                UF = teclado.nextFloat();
+            }
+            
             this.Health = (int) (UF * 35000);
         }
     }

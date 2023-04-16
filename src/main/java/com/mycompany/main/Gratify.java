@@ -11,7 +11,10 @@ class Gratify {
      * Nota 1: Se presupone que el usuario pueda ingresar una respuesta no
      * deseada por lo que se le vuelve a preguntar si posee gratificación.
      * 
-     * Nota 2: En el caso de que la respuesta sea "No" se define una
+     * Nota 2: Se presupone que el usuario podría ingresar un monto negativo o 
+     * 0, por lo que se le limita a ingresar solo valores positivos.
+     * 
+     * Nota 3: En el caso de que la respuesta sea "No" se define una
      * Gratificación de monto 0.
      * 
      * @param gratify: Respuesta del usuario a la posesión de Gratificación
@@ -29,7 +32,11 @@ class Gratify {
         if (gratify.equalsIgnoreCase("Si")) {
             
             System.out.println("¿Cuál es el monto de su gratificación?: ");
-            this.gratify= teclado.nextInt();
+            this.gratify= teclado.nextFloat();
+            while(this.gratify<=0){
+                System.out.println("El monto ingresado no es válido, ingrese otro monto: ");
+                this.gratify=teclado.nextFloat();
+            }
             
         }
         else if (gratify.equalsIgnoreCase("No")) {
@@ -42,7 +49,7 @@ class Gratify {
      * anteriores
      * @return Retorna la Gratificación
      */
-    public int getGratify() {
+    public float getGratify() {
 
         return (int) this.gratify;
     }

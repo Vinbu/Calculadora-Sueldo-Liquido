@@ -31,7 +31,7 @@ class AFP_Percent {
      * @param salary1 Salario Base Y Gratificación
      * @param AFP Respuesta del usuario en formato String
      */
-    public AFP_Percent(int salary1, String AFP) {
+    public AFP_Percent(float salary1, String AFP) {
         float AFP_Cap = this.AFP_Cap * salary1;
         float AFP_Cup = this.AFP_Cup * salary1;
         float AFP_Hab = this.AFP_Hab * salary1;
