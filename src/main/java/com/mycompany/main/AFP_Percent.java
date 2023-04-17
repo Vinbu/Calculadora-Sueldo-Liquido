@@ -1,35 +1,35 @@
 package com.mycompany.main;
 
+
 import java.util.Arrays;
 import java.util.Scanner;
 
 class AFP_Percent {
-    private float AFP_Cap = 0.10144F;
-    private float AFP_Cup = 0.10144F;
-    private float AFP_Hab = 0.10127F;
-    private float AFP_Mod = 0.10058F;
-    private float AFP_PlV = 0.10116F;
-    private float AFP_Pro = 0.10145F;
-    private float AFP_Uno = 0.10069F;
+    private float AFP_Cap = 0.1144F;
+    private float AFP_Cup = 0.1144F;
+    private float AFP_Hab = 0.1127F;
+    private float AFP_Mod = 0.1058F;
+    private float AFP_PlV = 0.1116F;
+    private float AFP_Pro = 0.1145F;
+    private float AFP_Uno = 0.1069F;
     private int AFP_Client;
 
-    /**Obtiene el valor de la AFP
+    /**
+     * Obtiene el valor de la AFP
      * La siguiente clase se encarga de obtener el monto de descuento de la AFP
      * del usuario de acuerdo a lo ingresado y a las AfP existentes en Chile.
-     * 
-     * Nota 1: Inicialmente se almacenan cada uno de los posibles resultados
-     * de acuerdo a lo ingresado por el usuario.
-     * 
-     * Nota 2: Se crea una lista con cada una de las AFP existentes para
+     * <p>
+     * Nota 1: Se crea una lista con cada una de las AFP existentes para
      * compararla con la respuesta del usuario, ya que se presupone que pueda
      * ingresar algo no deseado.
-     * 
-     * Nota 3: Cuando la respuesta de usuario coincide con alguna AFP de la
+     * <p>
+     * Nota 2: Cuando la respuesta de usuario coincide con alguna AFP de la
      * lista se procede a guardar el valor correspondiente a esa AFP,
-     * extrayéndolo de una de las posibles respuestas anteriormente 
+     * extrayéndolo de una de las posibles respuestas anteriormente
      * almacenadas.
+     *
      * @param salary1 Salario Base Y Gratificación
-     * @param AFP Respuesta del usuario en formato String
+     * @param AFP     Respuesta del usuario en formato String
      */
     public AFP_Percent(float salary1, String AFP) {
         float AFP_Cap = this.AFP_Cap * salary1;
@@ -79,10 +79,6 @@ class AFP_Percent {
         }
     }
 
-    /**
-     * Metodo que retorna el monto de descuento de la AFP seleccionada
-     * @return Retornar monto AFP
-     */
     public int getAFP_Client() {
         return AFP_Client;
     }

@@ -1,21 +1,16 @@
 package com.mycompany.main;
-
 import java.util.Scanner;
 
-/** Calculo de Sueldo Base a Líquido 
+/**
+ * Calculo de Sueldo Base a Líquido
  * La siguiente clase tiene propósito obtener los datos necesarios para calcular
- * el Sueldo Líquido a partir del Sueldo Base y ciertos descuentos o 
+ * el Sueldo Líquido a partir del Sueldo Base y ciertos descuentos o
  * bonificaciones tales como; Afp, Seguro de Cesantía, Seguro de Salud y
- * Gratificaciones. 
- * 
- * Para ello se crean distintasinstancias para cada una de las
- * clases necesarias. 
- * 
- * Por último se muestra el monto de cada uno de los descuentos y en el Sueldo 
- * Líquido.
- * 
+ * Gratificaciones.
+ * <p>500
+ *
  * @author Vincent Bustamante y Dante Quezada
- * @version 1.8
+ * @version 1.9
  */
 public class Main {
     public static void main(String[] args) {
@@ -23,7 +18,7 @@ public class Main {
 
         System.out.print("Indique su Sueldo Base: ");
         float salary = teclado.nextFloat();
-        while(salary<=0){
+        while (salary <= 0) {
             System.out.println("El monto ingresado no es válido, ingrese otro valor: ");
             salary = teclado.nextFloat();
         }
@@ -31,9 +26,9 @@ public class Main {
         System.out.println("¿Posee Gratificación? (Si / No)");
         String gratify = teclado.next();
         Gratify gratify1 = new Gratify(gratify);
-        int gratify_percent = (int) gratify1.getGratify();
-        
-        float salary1 = gratify_percent + salary;
+        float gratify_percent = (float) gratify1.getGratify_percent();
+
+        float salary1 = salary + gratify_percent * salary;
 
         Scanner teclado2 = new Scanner(System.in);
         System.out.println("¿Posee Fonasa o Isapre?: ");
