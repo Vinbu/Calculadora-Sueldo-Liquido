@@ -1,4 +1,5 @@
 package com.mycompany.main;
+
 import java.util.Scanner;
 
 /**

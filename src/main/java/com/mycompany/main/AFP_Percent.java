@@ -4,6 +4,20 @@ package com.mycompany.main;
 import java.util.Arrays;
 import java.util.Scanner;
 
+/**
+ * Obtiene el valor de la AFP
+ * La siguiente clase se encarga de obtener el monto de descuento de la AFP
+ * del usuario de acuerdo a lo ingresado y a las AfP existentes en Chile.
+ * <p>
+ * Nota 1: Se crea una lista con cada una de las AFP existentes para
+ * compararla con la respuesta del usuario, ya que se presupone que pueda
+ * ingresar algo no deseado.
+ * <p>
+ * Nota 2: Cuando la respuesta de usuario coincide con alguna AFP de la
+ * lista se procede a guardar el valor correspondiente a esa AFP,
+ * extrayéndolo de una de las posibles respuestas anteriormente
+ * almacenadas.
+ */
 class AFP_Percent {
     private float AFP_Cap = 0.1144F;
     private float AFP_Cup = 0.1144F;
@@ -15,19 +29,6 @@ class AFP_Percent {
     private int AFP_Client;
 
     /**
-     * Obtiene el valor de la AFP
-     * La siguiente clase se encarga de obtener el monto de descuento de la AFP
-     * del usuario de acuerdo a lo ingresado y a las AfP existentes en Chile.
-     * <p>
-     * Nota 1: Se crea una lista con cada una de las AFP existentes para
-     * compararla con la respuesta del usuario, ya que se presupone que pueda
-     * ingresar algo no deseado.
-     * <p>
-     * Nota 2: Cuando la respuesta de usuario coincide con alguna AFP de la
-     * lista se procede a guardar el valor correspondiente a esa AFP,
-     * extrayéndolo de una de las posibles respuestas anteriormente
-     * almacenadas.
-     *
      * @param salary1 Salario Base Y Gratificación
      * @param AFP     Respuesta del usuario en formato String
      */

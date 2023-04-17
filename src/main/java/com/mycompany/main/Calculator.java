@@ -1,5 +1,9 @@
 package com.mycompany.main;
 
+/**
+ * La siguiente clase se encarga de definir los parámetros a utlizar, para
+ * realizar los debidos cálculos para obtener el Sueldo Líquido.
+ */
 class Calculator {
     private float salary;
     private float afp;
@@ -8,11 +12,7 @@ class Calculator {
     private float finalsalary;
 
     /**
-     * La siguiente clase se encarga de definir los parámetros a utlizar, para
-     * realizar los debidos cálculos para obtener el Sueldo Líquido.
-     * <p>
-     *
-     * @param salary1  Sueldo Bruto ingresado por el usuario.
+     * @param salary1 Sueldo Bruto ingresado por el usuario.
      * @param health  Valor del descuento del Seguro de Salud
      * @param afp     Valor del descuento por AFP
      */
