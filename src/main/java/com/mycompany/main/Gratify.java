@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  */
 class Gratify {
-    private float gratify_percent = 1;
+    private float gratify_percent = 0;
 
 
     /**
